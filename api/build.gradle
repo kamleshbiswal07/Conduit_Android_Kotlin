@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'kotlin-kapt'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version" // Library to make API Calls
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version" // Library which connects Retrofit with Moshi
+    implementation "com.squareup.moshi:moshi:$moshi_version" // library to convert JSON to Kotlin
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version" // Enhances Moshi's performance (does at compile time, not at run time)
+
+    // Test
+    testImplementation 'junit:junit:4.13.2'
+}
